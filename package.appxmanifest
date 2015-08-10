@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="aff8b548-d958-f4e3-fb9c-de63feaae26b" Publisher="CN=user" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="aff8b548-d958-f4e3-fb9c-de63feaae26b" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>22tracks</DisplayName>
+    <PublisherDisplayName>user</PublisherDisplayName>
+    <Logo>images\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10030.0" MaxVersionTested="10.0.10069.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="Www22tracksCom" StartPage="http://22tracks.com/?beta">
+      <uap:VisualElements DisplayName="22tracks" Square150x150Logo="images/150x150px.png" Square44x44Logo="images\44x44.png" Description="22tracks is a brilliantly curated playlist service, run by 120 expert and influential DJs from Amsterdam, Brussels, London and Paris. 22 genre playlists containing 22 monthly refreshed tunes can be streamed for free ." BackgroundColor="#252525">
+        <uap:LockScreen Notification="badge" BadgeLogo="images\BadgeLogo.png" />
+        <uap:DefaultTile Square310x310Logo="images\Square310x310Logo.png" Wide310x150Logo="images\Wide310x150Logo.png" Square71x71Logo="images\Square71x71Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="images\620x300.png" BackgroundColor="#252525" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+      <uap:ApplicationContentUriRules>
+        <uap:Rule Match="http://22tracks.com" Type="include" WindowsRuntimeAccess="all" />
+        <uap:Rule Match="http://localhost:8022" Type="include" WindowsRuntimeAccess="all" />
+      </uap:ApplicationContentUriRules>
+      <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="22tracks.app">
+          <BackgroundTasks>
+            <Task Type="audio" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
